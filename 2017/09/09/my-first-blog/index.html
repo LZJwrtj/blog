@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="李志杰的博客">
 <meta property="og:description" content="date: 2017-09-09 22:47:11 tags: 闭包  闭包的含义 闭包就是闭包就是能够读取其他函数内部变量的函数。由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。  123456789function f1()&amp;#123;    　　　　var n=999;    　　　　function f2()&amp;#">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-10T07:25:13.000Z">
+<meta property="og:updated_time" content="2017-09-10T07:46:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包">
 <meta name="twitter:description" content="date: 2017-09-09 22:47:11 tags: 闭包  闭包的含义 闭包就是闭包就是能够读取其他函数内部变量的函数。由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。  123456789function f1()&amp;#123;    　　　　var n=999;    　　　　function f2()&amp;#">
@@ -97,7 +97,7 @@
 <p>闭包就是闭包就是能够读取其他函数内部变量的函数。由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function f1()&#123;</div><div class="line">    　　　　var n=999;</div><div class="line">    　　　　function f2()&#123;</div><div class="line">    　　　　　　alert(n);</div><div class="line">    　　　　&#125;</div><div class="line">    　　　　return f2;</div><div class="line">    　　&#125;</div><div class="line">    　　var result=f1();</div><div class="line">    　　result(); // 999</div></pre></td></tr></table></figure>
-<p>上面代码中的f2就是闭包。</p>
+<p>上面代码中的f2就是闭包。<br><a id="more"></a></p>
 <h2 id="闭包的用途"><a href="#闭包的用途" class="headerlink" title="闭包的用途"></a>闭包的用途</h2><blockquote>
 <p>闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</p>
 </blockquote>
@@ -123,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lizhij.com/2017/09/09/my-first-blog/" data-id="cj7ef08q30000puo64voe6vgd" class="article-share-link">Share</a>
+      <a data-url="http://lizhij.com/2017/09/09/my-first-blog/" data-id="cj7eftsyv0000u1o6q63hlu6a" class="article-share-link">Share</a>
       
       
     </footer>
