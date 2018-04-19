@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js中的事件委托</title>
+    <style>
+
+        #btn{
+            width: 40px;
+            height: 30px;
+            line-height: 30px;
+            margin-left: 40px;
+            -webkit-appearance: button;
+        }
+        li {
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            margin-bottom: 10px;
+
+            list-style: none;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="添加" id="btn">
+<ul>
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+</ul>
+<script>
+    var oUl = document.getElementsByTagName('ul')[0]
+    var oLi = oUl.getElementsByTagName('li')
+    var oBtn = document.getElementById('btn')
+    var iNow = 3
+
+    //如果不使用事件代理：
+//    for (var i = 0; i < oLi.length; i++) {
+//        oLi[i].onmouseover = function () {
+//            this.style.backgroundColor = 'red'
+//        }
+//        oLi[i].onmouseout = function () {
+//            this.style.backgroundColor = ''
+//        }
+//    }
+    //如果li比较多，使用for循环的话比较影响性能
+
+
+    //事件代理模式：
+//    oUl.addEventListener('mouseover', function (e) {
+//        var e = e || window.event
+//        var target = e.target||e.srcElement
+//        if(target.nodeName.toLowerCase() == 'li') {
+//            target.style.backgroundColor = 'red'
+//        }
+//    })
+//    oUl.addEventListener('mouseout', function (e) {
+//        var e = e||window.event
+//        var target = e.target||e.srcElement
+//        if(target.nodeName.toLowerCase() == 'li') {
+//            target.style.backgroundColor = ''
+//        }
+//    })
+
+
+    //点击按钮动态添加li
+    //如果不使用事件代理
+//    for (var i = 0; i < oLi.length; i++) {
+//        oLi[i].onmouseover = function () {
+//            this.style.backgroundColor = 'red'
+//        }
+//        oLi[i].onmouseout = function () {
+//            this.style.backgroundColor = ''
+//        }
+//    }
+//    oBtn.addEventListener('click', function () {
+//        iNow++
+//        var li = document.createElement('li')
+//        li.innerHTML = 111 * iNow
+//        oUl.appendChild(li)
+//    })//我们发现动态添加的li并没有被绑定点击事件，这是因为for循环已经结束
+
+    //使用事件代理：
+    oUl.addEventListener('mouseover', function (e) {
+        var e = e || window.event
+        var target = e.target||e.srcElement
+        if(target.nodeName.toLowerCase() == 'li') {
+            target.style.backgroundColor = 'red'
+        }
+    })
+    oUl.addEventListener('mouseout', function (e) {
+        var e = e||window.event
+        var target = e.target||e.srcElement
+        if(target.nodeName.toLowerCase() == 'li') {
+            target.style.backgroundColor = ''
+        }
+    })
+    oBtn.addEventListener('click', function () {
+        iNow++
+        var li = document.createElement('li')
+        li.innerHTML = 111 * iNow
+        oUl.appendChild(li)
+    })
+
+
+</script>
+</body>
+</html>
