@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<button id="btn">点击</button>
+<script src="node_modules/axios/dist/axios.min.js"></script>
+<script>
+    var oBtn = document.getElementById('btn')
+    oBtn.onclick = function () {
+        axios.get('http://127.0.0.1:3000/api/getData').then(function(res){
+            console.log(res)
+        })
+    }
+</script>
+</body>
+</html>
