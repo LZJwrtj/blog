@@ -69,7 +69,7 @@
     <article id="post-share" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/23/share/" class="article-date">
-  <time datetime="2018-10-23T01:40:36.000Z" itemprop="datePublished">2018-10-23</time>
+  <time datetime="2018-10-23T01:40:36.627Z" itemprop="datePublished">2018-10-23</time>
 </a>
     
   </div>
@@ -80,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/23/share/">share</a>
+      <a class="article-title" href="/2018/10/23/share/">项目中遇到的一些问题</a>
     </h1>
   
 
@@ -88,7 +88,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="项目经验分享："><a href="#项目经验分享：" class="headerlink" title="项目经验分享："></a>项目经验分享：</h3><h5 id="1-找导游项目的评论功能中，唤起键盘的时候，在安卓机上会出现底部按钮被键盘顶上去的现象，但是ios中不会出现，出现这种兼容问题，可以在代码中加入下面一段："><a href="#1-找导游项目的评论功能中，唤起键盘的时候，在安卓机上会出现底部按钮被键盘顶上去的现象，但是ios中不会出现，出现这种兼容问题，可以在代码中加入下面一段：" class="headerlink" title="1.找导游项目的评论功能中，唤起键盘的时候，在安卓机上会出现底部按钮被键盘顶上去的现象，但是ios中不会出现，出现这种兼容问题，可以在代码中加入下面一段："></a>1.找导游项目的评论功能中，唤起键盘的时候，在安卓机上会出现底部按钮被键盘顶上去的现象，但是ios中不会出现，出现这种兼容问题，可以在代码中加入下面一段：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> screenHeight = <span class="built_in">document</span>.body.offsetHeight</div><div class="line"><span class="comment">// 为window绑定resize事件</span></div><div class="line"><span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> nowHeight = <span class="built_in">document</span>.body.offsetHeight</div><div class="line">    <span class="keyword">if</span> (nowHeight &lt; screenHeight) &#123;</div><div class="line">        <span class="comment">// 将底部弹起的按钮隐藏（可使用给按钮添加相应消失类）</span></div><div class="line">        $(<span class="string">'.btn-container'</span>).css(<span class="string">'display'</span>, <span class="string">'none'</span>)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// 将按钮正常显示（可使用给按钮移除相应消失类）</span></div><div class="line">        $(<span class="string">'.btn-container'</span>).css(<span class="string">'display'</span>, <span class="string">'block'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>date: 2018-10-23 09:40:36</p>
+<p>tags: 经验分享</p>
+<hr>
+<h3 id="项目经验分享："><a href="#项目经验分享：" class="headerlink" title="项目经验分享："></a>项目经验分享：</h3><h5 id="1-找导游项目的评论功能中，唤起键盘的时候，在安卓机上会出现底部按钮被键盘顶上去的现象，但是ios中不会出现，出现这种兼容问题，可以在代码中加入下面一段："><a href="#1-找导游项目的评论功能中，唤起键盘的时候，在安卓机上会出现底部按钮被键盘顶上去的现象，但是ios中不会出现，出现这种兼容问题，可以在代码中加入下面一段：" class="headerlink" title="1.找导游项目的评论功能中，唤起键盘的时候，在安卓机上会出现底部按钮被键盘顶上去的现象，但是ios中不会出现，出现这种兼容问题，可以在代码中加入下面一段："></a>1.找导游项目的评论功能中，唤起键盘的时候，在安卓机上会出现底部按钮被键盘顶上去的现象，但是ios中不会出现，出现这种兼容问题，可以在代码中加入下面一段：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> screenHeight = <span class="built_in">document</span>.body.offsetHeight</div><div class="line"><span class="comment">// 为window绑定resize事件</span></div><div class="line"><span class="built_in">window</span>.onresize = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> nowHeight = <span class="built_in">document</span>.body.offsetHeight</div><div class="line">    <span class="keyword">if</span> (nowHeight &lt; screenHeight) &#123;</div><div class="line">        <span class="comment">// 将底部弹起的按钮隐藏（可使用给按钮添加相应消失类）</span></div><div class="line">        $(<span class="string">'.btn-container'</span>).css(<span class="string">'display'</span>, <span class="string">'none'</span>)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// 将按钮正常显示（可使用给按钮移除相应消失类）</span></div><div class="line">        $(<span class="string">'.btn-container'</span>).css(<span class="string">'display'</span>, <span class="string">'block'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2018/10/23/share/#more">Read More</a>
@@ -97,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lizhij.com/2018/10/23/share/" data-id="cjnl3z5sl0001rvo64i9z5kvx" class="article-share-link">Share</a>
+      <a data-url="http://lizhij.com/2018/10/23/share/" data-id="cjnl45g3z0000uyo61u3sjj3t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lizhij.com/2017/09/16/2017-09-16/" data-id="cjnl3z5sn0002rvo607ibdhvd" class="article-share-link">Share</a>
+      <a data-url="http://lizhij.com/2017/09/16/2017-09-16/" data-id="cjnl45g440002uyo6bi6ugapi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lizhij.com/2017/09/11/2017-09-11/" data-id="cjnl3z5t20003rvo6it66kj42" class="article-share-link">Share</a>
+      <a data-url="http://lizhij.com/2017/09/11/2017-09-11/" data-id="cjnl45g4f0003uyo6o59khp6g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lizhij.com/2017/09/09/2017-09-09/" data-id="cjnl3z5sh0000rvo6qu35bgqh" class="article-share-link">Share</a>
+      <a data-url="http://lizhij.com/2017/09/09/2017-09-09/" data-id="cjnl45g420001uyo6sry8otze" class="article-share-link">Share</a>
       
       
     </footer>
@@ -273,7 +276,7 @@
       <ul>
         
           <li>
-            <a href="/2018/10/23/share/">share</a>
+            <a href="/2018/10/23/share/">项目中遇到的一些问题</a>
           </li>
         
           <li>
