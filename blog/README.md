@@ -43,4 +43,4 @@ function isArray(arr){
 }
 console.log(isArray(arr)) //true
 
-> 这种方法是我们经常会用到的
+> 这种方法是我们经常会用到的,推荐这种方法！
