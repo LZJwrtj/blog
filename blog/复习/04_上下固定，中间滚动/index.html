@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .header {
+      height: 200px;
+      background-color: red;
+    }
+    .content {
+      position: absolute;
+      top: 200px;
+      bottom: 200px;
+      width: 100%;
+      overflow-y: auto;
+      background-color: purple;
+    }
+    .footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background-color: green;
+    }
+    .button {
+      margin: 20px 80px;
+      height: 50px;
+      background-color: wheat;
+      border:10px solid #ddd;
+     border-image: -webkit-linear-gradient(#ddd,#000) 30 30;
+     border-image: -moz-linear-gradient(#ddd,#000) 30 30;
+     border-image: linear-gradient(#ddd,#000) 30 30;
+    }
+  </style>
+</head>
+<body>
+  <header class="header"></header>
+  <section class="content">
+    <div class="button"></div>
+  </section>
+  <footer class="footer"></footer>
+</body>
+</html>
