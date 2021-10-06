@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // // 1. 原型链
+    /*
+    重点：父类的实例作为子类的原型
+    优点 实例可继承的属性有：实例的构造函数的属性，父类构造函数的属性，父类原型的属性
+    缺点：1.不能向父类构造函数传参
+        2.继承单一，无法实现多继承
+    */
+    // function Person (name, job) {
+    //   this.name = name
+    //   this.job = job
+    //   this.sayHi = function () {
+    //     console.log('hello, ' + this.name)
+    //   }
+    // }
+    // Person.prototype.getName = function () {
+    //   console.log(this.name)
+    // }
+    // function Student (name, age) {
+    //   this.name = name
+    //   this.age = age
+    // }
+    // Student.prototype = new Person()
+    // Student.prototype.getAge = function () {
+    //   console.log(this.age)
+    // }
+    // var student1 = new Student('leo', 29)
+    // student1.getName() // undefined
+    // student1.getAge() // 29
+    // student1.sayHi()
+
+    
+    // // 2. 借用构造函数
+    // function Person (name) {
+    //   this.colors = ['red', 'purple', 'green']
+    // }
+    // Person.prototype.getName = function () {
+    //   console.log(this.name)
+    // }
+    // function Student () {
+    //   Person.call(this)
+    // }
+    // var student1 = new Student()
+    // console.log(student1.colors)
+
+    // // 3.组合继承
+    // function Person (name) {
+    //   this.name = name
+    // }
+    // Person.prototype.getName = function () {
+    //   console.log(this.name)
+    // }
+    // function Student (name, job) {
+    //   Person.call(this, name)
+    //   this.job = job
+    // }
+    // Student.prototype = new Person()
+    // Student.prototype.constructor = Student
+    // Student.prototype.getJob = function () {
+    //   console.log(this.job)
+    // }
+    // var student1 = new Student('leo', 'doctor')
+    // student1.getName()
+    // student1.getJob()
+    // 4. 原型式继承
+
+  </script>
+</body>
+</html>
