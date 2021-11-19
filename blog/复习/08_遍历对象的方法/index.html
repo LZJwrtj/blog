@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历对象的方法</title>
+</head>
+<body>
+<script>
+	function Person (name, age) {
+	  this.name = name
+		this.age = age
+	}
+	Person.prototype.getName = function () {
+	  console.log(`name: ${this.name}`)
+	}
+	let teacher = new Person('leo', 23)
+	let hobby = Symbol()
+	Object.defineProperty(teacher, 'job', {
+	  value: 'teacher',
+		enumerable: false
+	})
+	teacher[hobby] = 'eat'
+	/*
+	* 方法一： Object.keys() 返回一个数组，包含对象自身（不含继承）所有可枚举的属性（不含Symbol属性）
+	* 或者Object.values()或者Object.entries()
+	* */
+	console.log('Object.keys()遍历结果：')
+	Object.keys(teacher).forEach(item => {
+	  console.log(item, teacher[item])
+	})
+	console.log('------')
+
+	/*
+	* 方法二：for-in 循环遍历对象自身和继承的可枚举属性（不含Symbol属性）
+	* */
+  console.log('for-in遍历结果：')
+	for (let x in teacher) {
+	  console.log(x, teacher[x])
+	}
+  console.log('------')
+
+	/*
+	* 方法三：Object.getOwnPropertyNames() 返回一个数组，包含对象本身所有的属性（不含Symbol属性，含不可枚举属性）
+	* */
+  console.log('Object.getOwnPropertyNames()遍历结果：')
+  Object.getOwnPropertyNames(teacher).forEach(item => {
+    console.log(item, teacher[item])
+	})
+  console.log('------')
+
+	/*
+	* 方法四：Reflect.ownKeys() 返回一个数组，包含对象自身所有的属性，不管是Symbol属性还是字符串属性，也不管是否可枚举
+	* */
+  console.log('Reflect.ownKeys()遍历结果：')
+  Reflect.ownKeys(teacher).forEach(item => {
+    console.log(item, teacher[item])
+	})
+  console.log('------')
+</script>
+</body>
+</html>
