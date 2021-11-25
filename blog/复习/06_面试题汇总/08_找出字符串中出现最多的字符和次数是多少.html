@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+  let str = 'abcdefaaaadddd' // 找出出现最多的字符和次数是多少
+  // 第一种
+  let obj = {}
+  let maxArr = [] // 出现最多的字符
+  let max = 0 // 最多的次数
+  let arr = str.split('')
+  arr.forEach(item => {
+    if (obj[item]) {
+      obj[item] += 1
+    } else {
+      obj[item] = 1
+    }
+  })
+  // 第一种
+  // for (let v in obj) {
+  //   if (max < obj[v]) {
+  //     max = obj[v]
+  //   }
+  // }
+
+  // 第二种
+  Object.values(obj).forEach(item => {
+    if (max < item) {
+      max = item
+    }
+  })
+
+  // 第三种
+  // max = Math.max(...Object.values(obj))
+
+  for (let v in obj) {
+    if (obj[v] === max) {
+      maxArr.push(v)
+    }
+  }
+  console.log(maxArr, max)
+
+
+</script>
+</body>
+</html>
