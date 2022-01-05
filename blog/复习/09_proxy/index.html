@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      firstName: 'Tapas',
+      lastName: 'Adhikary'
+    }
+    let handler = {
+      get: function (target, fieldName) {
+        if (fieldName === 'fullName') {
+          return `${target.firstName} ${target.lastName}`
+        }
+        return fieldName in target ? target[fieldName] : `No such property as, '${fieldName}'!`
+      },
+      set: function (target, prop, value) {
+        if (prop === 'age') {
+          if (!Number.isInteger(value)) {
+            throw new TypeError('Age is always an Integer, Please Correct it!')
+          }
+          if (value < 0) {
+            throw new TypeError('This is insane, a nagative age?')
+          }
+          
+        }
+      }
+    }
+    let p = new Proxy(obj, handler)
+    // p.age = 'test' // Age is always an Integer, Please Correct it!
+    // p.age = -1 // This is insane, a nagative age?
+    p.age = 23
+    console.log(p.firstName)
+    console.log(p.lastName)
+    console.log(p.job)
+    console.log(p.fullName)
+    console.log(p.age)
+  </script>
+</body>
+</html>
